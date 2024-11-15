@@ -9,20 +9,22 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false  # Ensure credentials are not persisted
+          persist-credentials: false  # Important!
 
-      # If you have dependencies to install, include this step
-      # - name: Install dependencies
-      #   run: |
-      #     npm install
+      - name: Install dependencies
+        run: |
+          # If you have dependencies, install them here
+          # For example, npm install
+          echo "No dependencies to install"
 
-      # If you have a build script, include this step
-      # - name: Build the site
-      #   run: |
-      #     npm run build
+      - name: Build the site
+        run: |
+          # If you have a build script, run it here
+          # For example, npm run build
+          echo "No build script to run"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
