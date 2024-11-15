@@ -13,8 +13,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Set up Git user
+        run: |
+          git config --global user.name "github-actions[hassoonsy2]"
+          git config --global user.email "github-actions[hassoonsy2]@users.noreply.github.com"
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # Set to root if there is no build directory
+          publish_dir: ./  # Directory to deploy
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: "github-actions[hassoonsy2]"
+          user_email: "github-actions[hasoonsy2]@users.noreply.github.com"
