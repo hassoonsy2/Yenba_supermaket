@@ -1,29 +1,32 @@
-name: GitHub Pages Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # This workflow runs whenever there is a push to the 'main' branch
+      - main  # Replace with your default branch if different
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout the repository
         uses: actions/checkout@v3
+        with:
+          persist-credentials: false  # Ensure credentials are not persisted
 
-      - name: Set up Git user
-        run: |
-          git config --global user.name "github-actions[hassoonsy2]"
-          git config --global user.email "github-actions[hassoonsy2]@users.noreply.github.com"
+      # If you have dependencies to install, include this step
+      # - name: Install dependencies
+      #   run: |
+      #     npm install
+
+      # If you have a build script, include this step
+      # - name: Build the site
+      #   run: |
+      #     npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # Directory to deploy
-          publish_branch: gh-pages
-          force_orphan: true
-          user_name: "github-actions[hassoonsy2]"
-          user_email: "github-actions[hasoonsy2]@users.noreply.github.com"
+          publish_dir: ./  # Adjust to your publish directory
+          force_orphan: true  # Creates a new commit history on gh-pages branch
