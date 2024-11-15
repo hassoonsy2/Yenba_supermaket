@@ -1,0 +1,15 @@
+{
+  "name": "responsive-restaurant-website",
+  "version": "1.0.0",
+  "description": "A landing page template for a restaurant. It employs the use of HTML, CSS and Javascript to build it.",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
