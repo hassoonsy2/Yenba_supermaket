@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yenba Gemak</title>
+
+    <!-- **** Bootstrap CSS *** -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- **** FontAwesome CSS *** -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- **** Custom CSS *** -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.jpg">
+
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.152.0/build/three.module.js"
+          }
+        }
+    </script>
+</head>
+
+
+<body>
+<!-- **** Header Section **** -->
+<header>
+    <nav class="navbar navbar-expand-lg navigation-wrap shadow">
+        <div class="container">
+            <!-- Brand Logo -->
+            <a class="navbar-brand" href="#home">
+                <img src="assets/images/lgog_withbackground .jpg" alt="Yenba Gemak Logo" class="logo">
+            </a>
+            <!-- Toggler Button for Mobile View -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#explore-food">Onze Gerechten</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testinomial">Recensies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="tel:0685604755" class="main-btn">
+                            <i class="fa-solid fa-phone"></i> 0685604755
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- **** Top Banner Section with Background Video **** -->
+<section id="home">
+    <div class="container-fluid px-0 top-banner">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="assets/images/simitbaking.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Overlay for Better Text Visibility -->
+        <div class="overlay"></div>
+
+        <!-- Content -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-7 text-white">
+                    <h1 class="animate__animated animate__fadeInLeft">Heerlijke en Gezonde Recepten <br> Voor Iedereen</h1>
+                    <p class="drop-in-2">Geniet van heerlijke gerechten, zorgvuldig bereid met verse ingrediënten en passie. Welkom bij Yenba Gemak!</p>
+                    <div class="mt-4">
+                        <a href="https://www.thuisbezorgd.nl/winkel/supermarkt-yenba/producten?searchTerm=yanba#populair"
+                           target="_blank" class="btn btn-primary btn-lg">
+                            <i class="fa-solid fa-utensils"></i> Bestel Nu
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5 text-center">
+                    <!-- Optional additional content for the right side -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="onze-gerechten-section">
+    <h2>Onze Gerechten</h2>
+    <p>Ontdek onze uitgebreide selectie van heerlijke gerechten. Van sandwiches tot kumpir, voor ieder wat wils!</p>
+
+    <div class="menu-container">
+        <!-- Sandwiches Category with 3D Model -->
+        <div class="menu-category sandwiches-category">
+            <h3>Sandwiches</h3>
+            <ul>
+                <li>Healthy Sandwich – €7,00</li>
+                <li>Vitello Tonnato Cold Sandwich – €5,50</li>
+                <li>Caprese Cold Sandwich – €7,00</li>
+                <li>Philly Cheesesteak Hot Sandwich – €9,00</li>
+                <li>Grilled Sausage Naturel – €6,50</li>
+                <li>Grilled Sausage Cheese – €7,50</li>
+                <li>Grilled Sausage Spicy – €7,50</li>
+            </ul>
+
+            </div>
+
+        <div class="menu-category">
+            <h3>Pide/Vlees Brood</h3>
+            <ul>
+                <li>Kıymalı Pide – €5,50</li>
+                <li>Kușbașılı Pide – €6,50</li>
+                <li>Veggi Kumpir – €5,50</li>
+                <li>Kașarlı Pide Veggie – €5,50</li>
+                <li>Kașarlı Mantarlı Pide Veggie – €5,50</li>
+                <li>Ispanaklı Pide Veggie – €5,00</li>
+                <li>Sucuklu, Yumurtalı, Kașarlı Pide – €6,00</li>
+            </ul>
+        </div>
+
+        <div class="menu-category">
+            <h3>Lahmacun</h3>
+            <ul>
+                <li>Natuurlijk – €6,50</li>
+                <li>Kaas – €7,50</li>
+                <li>Vlees – €8,50</li>
+                <li>Kaas en Vlees – €9,50</li>
+            </ul>
+        </div>
+
+        <div class="menu-category">
+            <h3>Kumpir</h3>
+            <ul>
+                <li>Authentieke Klassieke Kumpir – €10,50</li>
+                <li>Platte Kumpir – €9,50</li>
+                <li>Veggi Kumpir – €9,50</li>
+                <li>Avocado Kumpir – €10,50</li>
+                <li>Tuna Kumpir – €11,50</li>
+                <li>Mexicaanse Kumpir – €10,99</li>
+                <li>Kumpir met Krokante Kip – €11,50</li>
+            </ul>
+        </div>
+
+        <div class="menu-category">
+            <h3>Pizza per Stuk</h3>
+            <ul>
+                <li>Margarita – €4,50</li>
+                <li>Champignon – €4,50</li>
+                <li>Paprika – €4,50</li>
+                <li>Salami – €5,50</li>
+                <li>Tonijn – €6,00</li>
+            </ul>
+        </div>
+
+        <div class="menu-category">
+            <h3>Desserts</h3>
+            <ul>
+                <li>Pistache – €5,50</li>
+                <li>Chocolade – €5,50</li>
+                <li>Șöbiyet – €5,50</li>
+                <li>Tulumba – €5,50</li>
+                <li>Sarma Fıstık – €5,50</li>
+                <li>Prens Cevizli – €5,50</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="..." crossorigin="anonymous"></script>
+
+<section id="order-online">
+    <div class="container order-container">
+        <div class="order-content">
+            <h2>Bestel Online via Thuisbezorgd</h2>
+            <p>Wil je gemakkelijk vanuit huis bestellen? Klik op de knop hieronder om naar onze Thuisbezorgd-pagina te gaan en je favoriete gerechten te bestellen!</p>
+            <a href="https://www.thuisbezorgd.nl/winkel/supermarkt-yenba/producten?searchTerm=yanba#populair" target="_blank" class="order-btn">Bestel Nu op Thuisbezorgd</a>
+        </div>
+        <div id="simit-3d-order-container" ></div> <!-- Container for the 3D model -->
+    </div>
+</section>
+
+
+<!-- **** Testimonials Section (Renamed to Dutch) **** -->
+<!-- **** Testimonials Section (Renamed to Dutch) **** -->
+<section id="testinomial">
+    <div class="wrapper testimonial-section">
+        <div class="container text-center">
+            <div class="text-center pb-4">
+                <h2 class="text-white">Recensies</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-lg-10 offset-lg-1">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="carousel-caption">
+                                    <div class="review-content">
+                                        <img src="assets/images/review-1.jpg" alt="Review 1">
+                                        <p>“Ver weg, achter de woordbergen, ver van de landen Vokalia en Consonantia, leven de blinde teksten.”</p>
+                                        <h5>Johnthan Doe</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-caption">
+                                    <div class="review-content">
+                                        <img src="assets/images/review-2.jpg" alt="Review 2">
+                                        <p>“Het ontbijt was heerlijk. Net als een goed huisgemaakt ontbijt. Genoten van de hele ervaring en ik raad deze plek zeker aan voor een maaltijd.”</p>
+                                        <h5>Ronnie E.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- More carousel items here as needed -->
+                        </div>
+
+                        <!-- Carousel controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Vorige</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Volgende</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Add Bootstrap JS at the end of the body if not already included -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-rlPQ2AVYVjsK6nZp8GdH+QAx4O/YcSJ1oRKD+ZV2s2aSCbIYGwvV+E8LR0FL5rh9" crossorigin="anonymous"></script>
+
+
+
+<!-- **** FAQ Section (Translated to Dutch) **** -->
+<section id="faq">
+    <div class="faq-section">
+        <div class="container">
+            <div class="text-center pb-4">
+                <h2 class="faq-title">Vastgestelde Vragen</h2>
+                <p class="faq-subtitle">We hebben de antwoorden op enkele veelgestelde vragen voor je verzameld.</p>
+            </div>
+            <div class="faq-cards">
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <span class="icon">🕌</span> Is alles 100% halal?
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Ja, al onze producten zijn 100% halal.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <span class="icon">🚚</span> Bezorgt u via Thuisbezorgd?
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Ja, we bezorgen via Thuisbezorgd. Klik op de "Bestel Nu" knop hierboven om direct te bestellen.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <span class="icon">🍬</span> Hebben jullie Amerikaanse snoep?
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Ja, we hebben een selectie van populaire Amerikaanse snoepjes beschikbaar.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <div class="faq-question">
+                        <span class="icon">🍻</span> Verkoopt u alcohol?
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Ja, we verkopen ook alcoholische dranken.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- **** Contact Section (Translated to Dutch) **** -->
+<section id="contact-ons">
+    <div class="container">
+        <h2 class="section-title">Contact Ons</h2>
+        <div class="contact-info">
+            <div class="contact-details">
+                <h3>Telefoon</h3>
+                <p>0685604755</p>
+
+                <h3>Adres</h3>
+                <p>Elandsgracht 128a, 1016 VB Amsterdam</p>
+
+                <h3>KvK Nummer</h3>
+                <p>87178273</p>
+
+                <h3>Openingstijden</h3>
+                <ul class="opening-hours">
+                    <li>Maandag: 08:00 - 22:00</li>
+                    <li>Dinsdag: 08:00 - 22:00</li>
+                    <li>Woensdag: 08:00 - 22:00</li>
+                    <li>Donderdag: 08:00 - 22:00</li>
+                    <li>Vrijdag: 08:00 - 22:00</li>
+                    <li>Zaterdag: 08:00 - 22:00</li>
+                    <li>Zondag: 08:00 - 22:00</li>
+                </ul>
+            </div>
+
+            <div class="contact-map">
+                <h3>Locatie</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2437.559299576892!2d4.8762691!3d52.369257!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609510033eb85%3A0xd623d7097c5a45b1!2sYenba%20Gemak!5e0!3m2!1sen!2snl!4v1700000000000!5m2!1sen!2snl" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+    <div class="footer py-5">
+        <div class="container text-center">
+            <div id="footer-3d-canvas" style="height: 300px; width: 100%;"></div>
+            <p class="branding-text">
+                Gemaakt door <span>BrightByte Marketing B.V.</span> <br>&copy; 2023 | Alle rechten voorbehouden.
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Place your JavaScript code here -->
+
+<script type="module" src="assets/js/main.js"></script>
+
+
+
+
+</body>
+
+</html>
+
+

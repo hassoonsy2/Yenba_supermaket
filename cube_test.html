@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js GLB Test</title>
+
+    <!-- Import Map for Module Resolution -->
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.152.0/build/three.module.js"
+          }
+        }
+    </script>
+
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #model-container {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+<div id="model-container"></div>
+
+<!-- Your JavaScript Code -->
+<script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'https://unpkg.com/three@0.152.0/examples/jsm/loaders/GLTFLoader.js';
+
+    // Log message to confirm JS is running
+    console.log("JavaScript execution started.");
+
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM fully loaded. Starting model viewer setup...");
+
+        // Get the container where we will render the model
+        const container = document.getElementById('model-container');
+        if (!container) {
+            console.error('3D container not found.');
+            return;
+        }
+
+        console.log('Container found:', container);
+
+        // Scene setup
+        const scene = new THREE.Scene();
+
+        // Camera setup
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+        camera.position.set(0, 2, 10);
+        camera.lookAt(0, 0, 0);
+        console.log('Camera created.');
+
+        // Renderer setup
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        container.appendChild(renderer.domElement);
+        console.log('Renderer initialized and appended.');
+
+        // Lighting setup
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+        scene.add(ambientLight);
+        console.log('Ambient light added.');
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
+        console.log('Directional light added.');
+
+        // Load the GLB model using GLTFLoader
+        const loader = new GLTFLoader();
+        const modelPath = 'assets/images/Turkish_simit_1115163756_refine.glb'; // Adjust this path if necessary
+        console.log(`Attempting to load GLB model from: ${modelPath}`);
+
+        let model; // Declare the model variable outside the loader scope
+
+        loader.load(
+            modelPath,
+            function (gltf) {
+                console.log('Model loaded successfully:', gltf);
+                model = gltf.scene;
+                model.scale.set(2, 2, 2); // Adjust the scale if necessary
+                model.position.set(0, 0, 0); // Place the model at the center of the scene
+                scene.add(model);
+                console.log('Model added to scene.');
+            },
+            function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+            },
+            function (error) {
+                console.error('An error occurred while loading the model:', error);
+            }
+        );
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Rotate the model if it's loaded
+            if (model) {
+                model.rotation.y += 0.01;
+            }
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resizing
+        window.addEventListener('resize', () => {
+            console.log('Window resized. Updating camera and renderer settings.');
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    });
+</script>
+</body>
+</html>
